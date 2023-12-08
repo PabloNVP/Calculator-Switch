@@ -1,0 +1,382 @@
+
+@font-face{
+    font-family: Nintendo;
+    src: url('../font/Nintendo.ttf');
+}
+
+@media screen and (max-width: 612px) {
+    body header{
+        display: none;
+    }
+    body main{
+        flex-wrap: wrap;
+    }
+    body main .display{
+        order: 0;
+        height: 232px;
+    }
+    body main .display input{
+        height: 200px;
+    }
+    body main .panelLeft{
+        order: 1;
+    }
+    body main .panelRight{
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 613px) and (max-width: 760px) {
+    body header{
+        display: none;
+    }
+    body main{
+        flex-wrap: wrap;
+        gap: 64px;
+    }
+    body main .display{
+        order: 0;
+        height: 232px;
+        width: 576px;
+        margin-bottom: -64px;
+    }
+    body main .display input{
+        height: 200px;
+        width: 544px;
+    }
+    body main .panelLeft{
+        order: 1;
+    }
+    body main .panelRight{
+        order: 2;
+    }
+}
+
+@keyframes errorPokemon {
+    50% { 
+        background: radial-gradient(circle, white 0%, #ec5c53 100%);
+    }
+}
+
+@keyframes errorMario {
+    50% { 
+        background: radial-gradient(circle, white 0%, #f34a81 100%);
+    }
+}
+
+@keyframes successMario {
+    0% { 
+        background: url('../image/successMario.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 0%;
+    } 100% {
+         background-position: center center;
+         background-size: 100%;
+    }
+}
+
+@keyframes successPokemon {
+    0% { 
+        background: url('../image/successPokemon.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 0%;
+    } 100% {
+        background-position: center center;
+        background-size: 100%;
+    }
+}
+
+@keyframes clear {
+    0% { 
+        background: linear-gradient(to right, black 0%, white 100%); 
+    } 50% {
+        background: linear-gradient(to right, white 0%, black 100%); 
+    } 100% {
+        background: linear-gradient(to right, white 100%, black 100%); 
+    }
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    background-size: 100% 2px;
+    background-position-x: 0px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+header label{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.mainPokemon {
+    background-image: linear-gradient(to right, #50bcde 0%, #ec5c53 100%);
+}
+
+.mainMario {
+    background-image: linear-gradient(to right, #76e05c 0%, #f34a81 100%);
+}
+
+main .display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 480px;
+    background-color:rgb(150, 150, 150);
+    box-shadow: inset 0px 0px 0px 16px black;
+    order: 1;
+    transition: all 0.15s linear;
+}
+
+main .display input{
+    width: 448px;
+    height: 256px;
+    text-align: center;
+    font-family: Nintendo;
+    font-size: 32px;
+    border: none;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.errorPokemonAnimation{
+    animation: errorPokemon 0.3s;
+}
+
+.errorMarioAnimation{
+    animation: errorMario 0.3s;
+}
+
+.successMarioAnimation{
+    animation: successMario 0.6s;
+}
+
+.successPokemonAnimation{
+    animation: successPokemon 0.6s;
+}
+
+.clearAnimation{
+    animation: clear 0.15s;
+}
+
+.panelLeft, .display, .panelRight{
+    height: 288px;
+}
+
+.panelLeft{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1px;
+    border-bottom-left-radius: 64px;
+    border-top-left-radius: 64px;
+    box-shadow: inset -10px 0px 10px 8px rgba(0.5,0.5,0.5,0.25);
+    border: rgb(50,50,50) 4px solid;
+    width: 128px;
+    order: 0;
+    transition: all 1s;
+}
+
+.panelBlue{
+    background: url('../image/blue.png'), #50bcde;
+    background-repeat: no-repeat;
+}
+
+.panelGreen{
+    background: url('../image/green.png'), #76e05c;
+    background-repeat: no-repeat;
+}
+
+.panelRight{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 4px;
+    border-bottom-right-radius: 64px;
+    border-top-right-radius: 64px;
+    box-shadow: inset -10px 0px 10px 8px rgba(0.5,0.5,0.5,0.25);
+    border: rgb(50,50,50) 4px solid;
+    width: 128px;
+    vertical-align: middle;
+    order: 2;
+    transition: all 1s;
+}
+
+.panelRed{
+    background: url('../image/red.png'), #ec5c53;
+    background-repeat: no-repeat;
+}
+
+.panelPink{
+    background: url('../image/pink.png'), #f34a81;
+    background-repeat: no-repeat;
+}
+
+.panelLeft button{
+    border: 2px rgb(50, 50, 50) solid;
+    background-color: rgb(150, 150, 150);
+    font-weight: bolder;
+    width: 32px;
+    height: 32px;
+    box-shadow: inset -10px 0px 10px 4px rgba(0.5,0.5,0.5,0.25);
+    color: white;
+}
+
+.panelLeft .power{
+    border-radius: 48px 8px 48px 8px;
+    width: 72px;
+    margin-top: 16px;
+    transition: background-color 1s;
+}
+
+.panelLeft .powerGreen{
+    background-color: yellowgreen;
+}
+
+.panelLeft .powerYellow{
+    background-color: goldenrod;
+}
+
+.panelLeft .addition{
+    border-radius: 8px 8px 48px 48px;
+}
+
+.panelLeft .multiplication{
+    border-radius: 8px 48px 48px 8px;
+}
+
+.panelLeft .subtraction{
+    border-radius: 48px 48px 8px 8px;
+}
+
+.panelLeft .division{
+    border-radius: 48px 8px 8px 48px;
+}
+
+.panelLeft .none{
+    visibility: hidden;
+}
+
+.panelLeft .equal{
+    border-radius: 32px;
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.panelRight button{
+    border: 2px rgb(50, 50, 50) solid;
+    background-color: rgb(150, 150, 150);
+    border-radius: 32px;
+    width: 32px;
+    height: 32px;
+    font-weight: bolder;
+    box-shadow: inset -10px 0px 10px 4px rgba(0.5,0.5,0.5,0.25);
+    color: white;
+}
+
+.panelLeft .press, .panelRight .press{
+    box-shadow: inset -10px 0px 10px 4px rgba(0.5,0.5,0.5,0.50);
+}
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 32px;
+    margin-right: 32px;
+    border: 1px black solid;
+    border-radius: 32px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #76e05c;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #50bcde;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #50bcde;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+button:hover{
+    outline: 8px rgba(0.5,0.5,0.5,0.25) solid;
+}
+
+footer{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+    text-align: center;
+}
+
+footer label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:white;
+}

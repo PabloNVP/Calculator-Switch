@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator-Switch</title>
+        <meta name="description" content="Bienvenido a la Web de la Calculadora Básica con Estilo de Consola Nintendo Switch!" />
+        <meta name="keywords" content="javascript, open-source, calculator, mathematics, basic-project, nintendo-switch-style"/>
+        <meta name="author" content="https://github.com/PabloNVP" />
+        <link type="image/png" sizes="16x16" rel="icon" href="/favicon.png" />
+        <link type="image/png" sizes="32x32" rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <label>Calculator-Switch</label>
+        </header>
+    
+        <main id="main" class="mainPokemon">
+            <div id="panelLeft" class="panelLeft panelBlue">
+                <button class="none"></button>
+                <button class="addition" id="+">+</button>
+                <button class="none"></button>
+                <button class="multiplication" id="*">x</button>
+                <button class="equal" id="Enter">=</button>
+                <button class="division" id="/">&#247</button>
+                <button class="none"></button>
+                <button class="subtraction" id="-">-</button>
+                <button class="none"></button>
+                <button class="power powerGreen" id="onoff">ON/OFF</button>
+            </div>
+
+            <div class="display">
+                <input id="display" placeholder="Inserting an arithmetic expression..." auto-focus readonly/>
+                
+                <audio id='soundError'>
+                    <source src="sound/error.wav" type="audio/wav">
+                </audio>   
+                <audio id="soundClic">
+                    <source src="sound/clic.wav" type="audio/wav">
+                </audio>
+                <audio id="soundSuccess">
+                    <source src="sound/success.wav" type="audio/wav">
+                </audio>
+                <audio id="soundClear">
+                    <source src="sound/clear.wav" type="audio/wav">
+                </audio>
+            </div>
+
+            <div id="panelRight" class="panelRight panelRed">
+                <button id="7">7</button>
+                <button id="8">8</button>
+                <button id="9">9</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+                <button id="6">6</button>
+                <button id="1">1</button>
+                <button id="2">2</button>
+                <button id="3">3</button>
+                <button id="Backspace">&#8592</button>
+                <button id="0">0</button>
+                <button id=".">.</button>
+            </div>
+            <label class="switch">
+                <input id="switch" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </main>
+        <footer>
+            <label>The GNU General Public License v3.0</label>
+        </footer>
+
+        <script type="text/javascript" src="js/Display.js"></script>
+        <script type="text/javascript" src="js/DisplayMario.js"></script>
+        <script type="text/javascript" src="js/DisplayPokemon.js"></script>
+        <script type="text/javascript" src="js/Calculator.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>
