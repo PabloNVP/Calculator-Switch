@@ -250,6 +250,41 @@ class Calculator{
         this.display = new DisplayPokemon();
     }
 
+    /***
+     * Dibuja los botones en los paneles.
+     * @return {void}
+     */
+    drawButtons = () => {
+        let i = 250, j = 250;
+
+        this.panelRight.querySelectorAll('button').forEach(element => {
+            i+=25;
+            setTimeout(() => { element.style.opacity = "1"; }, i);
+        });
+
+        this.panelLeft.querySelectorAll('button').forEach(element => {
+            j+=25;
+            setTimeout(() => { element.style.opacity = "1"; }, j);
+        });
+    }
+
+    /**
+     * Actualiza el orden de los paneles.
+     * @return {void}
+     */
+    resizePanel = () => {
+        this.panelLeft.style.display = "None";
+        this.panelRight.style.display = "None";
+        this.panelLeft.style.order = "1";
+        this.panelRight.style.order = "2";
+        
+        setTimeout(() => {
+            this.panelLeft.style.display = "Flex";
+            this.panelRight.style.display = "Flex";
+            
+         }, 250);
+    }
+
      /***
      * Actualiza el estilo del boton al estar presionado o no.
      * @param {String} key Boton a actualizar estilo

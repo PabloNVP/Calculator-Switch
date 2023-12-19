@@ -75,8 +75,17 @@ document.getElementById('switch').addEventListener('change', (event) => {
 }, false);
 
 /***
+ * Detecta los cambios de tamaño de la pagina.
+ */
+window.addEventListener("resize", function() {
+    calculator.resizePanel();
+});
+
+/***
  * Detecta la completa carga de la pagina.
  */
 window.onload = () => {
     document.getElementById('switch').checked = true;
+    calculator.resizePanel();
+    calculator.drawButtons();
 }
