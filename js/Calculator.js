@@ -80,6 +80,7 @@ class Calculator{
     deleteEcuation = () => {
         if(this.ecuation != ""){
             this.ecuation = "";
+            this.result = "";
             this.display.updateStyleDisplayClear();
             this.display.updateDisplay(this.ecuation);
         }
@@ -275,6 +276,8 @@ class Calculator{
     resizePanel = () => {
         this.panelLeft.style.display = "None";
         this.panelRight.style.display = "None";
+        this.panelLeft.style.animation = "scrollLeftIn 0.5s linear";
+        this.panelRight.style.animation = "scrollRightIn 0.5s linear";
         this.panelLeft.style.order = "1";
         this.panelRight.style.order = "2";
         

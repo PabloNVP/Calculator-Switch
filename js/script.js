@@ -84,8 +84,8 @@ window.addEventListener("resize", function() {
 /***
  * Detecta la completa carga de la pagina.
  */
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('switch').checked = true;
     calculator.resizePanel();
     calculator.drawButtons();
-}
+});

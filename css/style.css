@@ -14,6 +14,7 @@
     body main .display{
         order: 0;
         height: 232px;
+        margin-bottom: -64px;
     }
     body main .display input{
         height: 200px;
@@ -26,7 +27,7 @@
     }
     body main{
         flex-wrap: wrap;
-        gap: 64px;
+        gap: 32px;
     }
     body main .display{
         order: 0;
@@ -186,9 +187,11 @@ main .display input{
 
 .panelLeft, .display, .panelRight{
     height: 288px;
+    z-index: 1;
 }
 
 .panelLeft{
+    position:relative;
     display:flex;
     flex-wrap: wrap;
     align-content: center;
@@ -201,7 +204,6 @@ main .display input{
     width: 128px;
     order: 0;
     transition: all 1s;
-    animation: scrollLeftIn 0.5s linear;
 }
 
 .panelBlue{
@@ -228,7 +230,6 @@ main .display input{
     vertical-align: middle;
     order: 2;
     transition: all 1s;
-    animation: scrollRightIn 0.5s linear;
 }
 
 .panelRed{
